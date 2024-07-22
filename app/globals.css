@@ -1,33 +1,210 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.playButton {
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.playButton:hover {
+  background-color: #0051bb;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Add this to your existing globals.css */
+
+.cube {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+}
+
+.face {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100px;
+  height: 100px;
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+/* Add this to your existing globals.css */
+
+.cube-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cube-row {
+  display: flex;
+}
+
+.face {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90px;
+  height: 90px;
+  margin: 2px;
+}
+
+.face-placeholder {
+  width: 90px;
+  height: 90px;
+  margin: 2px;
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px; /* Adjust this value as needed */
+}
+
+.rotate-button {
+  padding: 10px 5px;
+  font-size: 16px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rotate-button:hover {
+  background-color: #0051bb;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.playButton {
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.playButton:hover {
+  background-color: #0051bb;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
