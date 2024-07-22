@@ -176,6 +176,92 @@ export default function Play() {
 
   // ... rest of the component code
 
+  const solveWhiteLayer = () => {
+    console.log("going to solve white layer");
+    setCube(prevCube => {
+      let newCube = JSON.parse(JSON.stringify(prevCube)) as CubeState;
+      console.log("set new cube");
+      // Solve white cross
+      solveWhiteCross(newCube);
+      console.log("solved white cross");
+      // Solve white corners
+      solveWhiteCorners(newCube);
+      console.log("solved white corners");
+      // Align top layer of surrounding colors
+      // alignTopLayer(newCube);
+      console.log("aligned top layer");
+      return newCube;
+    });
+  };  
+
+  const solveWhiteCross = (cube: CubeState) => {
+    const centers = {
+      front: cube.front[1][1],
+      right: cube.right[1][1],
+      back: cube.back[1][1],
+      left: cube.left[1][1]
+    };
+  
+    // Solve each edge of the white cross
+    for (let i = 0; i < 4; i++) {
+      // Find white edge piece
+      let edge = findWhiteEdge(cube);
+      if (edge !== undefined) break;
+  
+      // Move edge to correct position
+      moveEdgeToPosition(cube, edge, centers);
+    }
+  };
+  
+  const solveWhiteCorners = (cube: CubeState) => {
+    const centers = {
+      front: cube.front[1][1],
+      right: cube.right[1][1],
+      back: cube.back[1][1],
+      left: cube.left[1][1]
+    };
+  
+    // Solve each corner of the white face
+    for (let i = 0; i < 4; i++) {
+      // Find white corner piece
+      let corner = findWhiteCorner(cube);
+      if (corner === undefined) break;
+  
+      // Move corner to correct position
+      moveCornerToPosition(cube, corner, centers);
+    }
+  };
+  
+  const alignTopLayer = (cube: CubeState) => {
+    while (cube.front[0][1] !== cube.front[1][1] ||
+           cube.right[0][1] !== cube.right[1][1] ||
+           cube.back[0][1] !== cube.back[1][1] ||
+           cube.left[0][1] !== cube.left[1][1]) {
+      rotateUp();
+    }
+  };
+  
+  const findWhiteEdge = (cube: CubeState) => {
+    // Implementation to find a white edge piece that's not in the correct position
+    // Return the position of the found edge
+  };
+  
+  const moveEdgeToPosition = (cube: CubeState, edge: any, centers: any) => {
+    // Implementation to move the found edge to its correct position
+    // This will involve a series of rotations based on the current position of the edge
+  };
+  
+  const findWhiteCorner = (cube: CubeState) => {
+    // Implementation to find a white corner piece that's not in the correct position
+    // Return the position of the found corner
+  };
+  
+  const moveCornerToPosition = (cube: CubeState, corner: any, centers: any) => {
+    // Implementation to move the found corner to its correct position
+    // This will involve a series of rotations based on the current position of the corner
+  };
+  
+
   return (
     <div className="container">
       <Head>
@@ -221,6 +307,7 @@ export default function Play() {
           <button onClick={rotateFrontPrime} className="rotate-button">F&apos;</button>
           <button onClick={rotateBack} className="rotate-button">B</button>
           <button onClick={rotateBackPrime} className="rotate-button">B&apos;</button>
+          <button onClick={solveWhiteLayer} className="solve-button">Solve White Layer</button>
         </div>
       </main>
     </div>
@@ -267,3 +354,4 @@ function initialCubeState(): CubeState {
       [face[0][0], face[1][0], face[2][0]]
     ];
   }
+
