@@ -210,17 +210,17 @@ export default function Play() {
         </div>
         <div className="button-container">
           <button onClick={rotateUp} className="rotate-button">U</button>
-          <button onClick={rotateUpPrime} className="rotate-button">U'</button>
+          <button onClick={rotateUpPrime} className="rotate-button">U&apos;</button>
           <button onClick={rotateDown} className="rotate-button">D</button>
-          <button onClick={rotateDownPrime} className="rotate-button">D'</button>
+          <button onClick={rotateDownPrime} className="rotate-button">D&apos;</button>
           <button onClick={rotateRight} className="rotate-button">R</button>
-          <button onClick={rotateRightPrime} className="rotate-button">R'</button>
+          <button onClick={rotateRightPrime} className="rotate-button">R&apos;</button>
           <button onClick={rotateLeft} className="rotate-button">L</button>
-          <button onClick={rotateLeftPrime} className="rotate-button">L'</button>
+          <button onClick={rotateLeftPrime} className="rotate-button">L&apos;</button>
           <button onClick={rotateFront} className="rotate-button">F</button>
-          <button onClick={rotateFrontPrime} className="rotate-button">F'</button>
+          <button onClick={rotateFrontPrime} className="rotate-button">F&apos;</button>
           <button onClick={rotateBack} className="rotate-button">B</button>
-          <button onClick={rotateBackPrime} className="rotate-button">B'</button>
+          <button onClick={rotateBackPrime} className="rotate-button">B&apos;</button>
         </div>
       </main>
     </div>
@@ -267,10 +267,3 @@ function initialCubeState(): CubeState {
       [face[0][0], face[1][0], face[2][0]]
     ];
   }
-
-// up: [['white', 'white', 'white'], ['white', 'white', 'white'], ['white', 'white', 'white']],
-// left: [['orange', 'orange', 'orange'], ['orange', 'orange', 'orange'], ['orange', 'orange', 'orange']],
-// : [['green', 'green', 'green'], ['green', 'green', 'green'], ['green', 'green', 'green']],
-// right: [['red', 'red', 'red'], ['red', 'red', 'red'], ['red', 'red', 'red']],
-// : [['yellow', 'yellow', 'yellow'], ['yellow', 'yellow', 'yellow'], ['yellow', 'yellow', 'yellow']],
-// back: [['blue', 'blue', 'blue'], ['blue', 'blue', 'blue'], ['blue', 'blue', 'blue']]
